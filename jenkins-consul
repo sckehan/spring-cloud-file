@@ -19,5 +19,14 @@ pipeline {
 
       }
 
+      stage('Build Image') {
+         steps {
+            sh 'docker -v'
+            sh 'docker build -t="docker.io/sckehan/spring-cloud-consul-producer:latest" .'
+            sh 'docker run -it -d --name spring-cloud-consul-producer -p 8501:8501 docker.io/sckehan/spring-cloud-consul-producer:latest'
+         }
+
+      }
+
    }
 }
