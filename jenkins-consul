@@ -4,8 +4,16 @@ pipeline {
       
       stage('Pull Code') {
          steps {
-            git 'https://github.com/ityouknow/spring-cloud-examples'
+            git 'https://github.com/sckehan/spring-cloud-examples.git'
             sh 'ls'
+         }
+
+      }
+     
+      stage('Build Code') {
+         steps {
+            sh 'mvn package'
+            sh 'ls target/'
          }
 
       }
