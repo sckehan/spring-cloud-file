@@ -12,7 +12,8 @@ pipeline {
      
       stage('Build Code') {
          steps {
-            sh 'cd spring-cloud-consul/spring-cloud-consul-producer && mvn -X clean package'
+            sh 'mvn -v'
+            //sh 'cd spring-cloud-consul/spring-cloud-consul-producer && mvn -X clean package'
             sh 'ls target/'
          }
 
