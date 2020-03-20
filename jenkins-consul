@@ -12,6 +12,8 @@ pipeline {
      
       stage('Build Code') {
          steps {
+            sh 'whoami'
+            sh 'source /etc/profile'
             sh 'echo $JAVA_HOME'
             sh 'mvn -v'
             //sh 'cd spring-cloud-consul/spring-cloud-consul-producer && mvn -X clean package'
