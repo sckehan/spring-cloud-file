@@ -12,7 +12,7 @@ pipeline {
      
       stage('Build Code') {
          steps {
-            sh 'cd spring-cloud-consul/spring-cloud-consul-producer && mvn package'
+            sh 'cd spring-cloud-consul/spring-cloud-consul-producer && /usr/apache-maven-3.6.3/bin/mvn package'
             sh 'ls target/'
          }
 
